@@ -14,3 +14,4 @@ Cyberrilla is a full-stack interactive learning platform designed as a game to i
 - **Dashboard & Visualization:** Flask/Jinja, Matplotlib  
 - **Networking & Security:** TLS/HTTPS, SSH & SSH Keys, Cloudflare Tunnel, Database Encryption  
 - **Project Management:** Scrum, WBS & Gantt, Risk & Stakeholder Analysis  
+<img width="1920" height="3000" alt="data" src="https://github.com/user-attachments/assets/4f60348d-fbe6-4d18-93bd-519665c6e891" />
