@@ -1,0 +1,29 @@
+{# templates/login.html #}
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="d-flex vh-100 justify-content-center align-items-center">
+  <form method="POST" action="{{ url_for('auth.login') }}" class="p-4 w-100 rounded-0" style="max-width: 400px;">
+    <h3 class="text-center mb-4 fw-bold display-6 text-white">LOGIN</h3>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-danger">
+      {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <div class="mb-3 mt-3">
+      <input type="text" class="form-control text-center rounded-0" id="username" name="username" placeholder="Enter Username" required>
+    </div>
+
+    <div class="mb-3">
+      <input type="password" class="form-control text-center rounded-0" id="password" name="password" placeholder="Enter Password" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 rounded-0">LOGIN</button>
+  </form>
+</div>
+{% endblock %}

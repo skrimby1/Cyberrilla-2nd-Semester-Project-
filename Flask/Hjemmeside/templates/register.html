@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="d-flex vh-100 justify-content-center align-items-center">
+    <form method="post" action="{{ url_for('auth.register') }}" class="p-4 w-100 rounded-0" style="max-width: 400px;">
+        <h3 class="text-center mb-4 fw-bold display-6 text-white">REGISTER</h3>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-danger">{{ messages[0] }}</div>
+        <script>
+            alert("{{ messages[0] }}");
+        </script>
+        {% endif %}
+        {% endwith %}
+
+        <div class="mb-3 mt-4">
+            <input type="email" class="form-control text-center rounded-0" id="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="row g-2 mb-3">
+            <div class="col-md-6">
+                <input type="text" class="form-control text-center rounded-0" id="firstname" name="firstname" placeholder="First name" required>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control text-center rounded-0" id="lastname" name="lastname" placeholder="Last name" required>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control text-center rounded-0" id="company" name="company" placeholder="Company" required>
+        </div>
+
+        <div class="mb-3">
+            <input type="text" class="form-control text-center rounded-0" id="username" name="username" placeholder="Username" required>
+        </div>
+
+        <div class="mb-3">
+            <input type="password" class="form-control text-center rounded-0" id="password" name="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 rounded-0">REGISTER</button>
+    </form>
+</div>
+{% endblock %}

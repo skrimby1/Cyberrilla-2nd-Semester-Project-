@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Download{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 text-center">
+  <h1>Hent Cyberrilla</h1>
+  <p>Vælg hvilken version du vil hente:</p>
+
+  <div class="d-flex gap-3">
+  <a href="{{ url_for('static', filename='Downloads/Test1.txt') }}" download class="btn btn-success mb-3 px-5 py-3">
+    Download Fullscreen-version
+  </a>
+
+  <a href="{{ url_for('static', filename='Downloads/Cyberrilla.zip') }}" download class="btn btn-success mb-3 px-5 py-3">
+    Download Window-version
+  </a>
+  </div>
+ <img src="{{ url_for('static', filename='windows-button.png') }}" class="img-fluid" width="300">
+ </div>
+{% endblock %}

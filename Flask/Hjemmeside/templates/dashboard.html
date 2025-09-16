@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <h1 id="The Team" class="p-5 mt-3 text-center">Samlet Statistik</h1>
+  <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+ <div style="text-align: center;">
+  <h1>Brugere <span class="badge text-bg-secondary">{{ all_users }}</span></h1>
+</div>
+  <img src="data:image/png;base64,{{ plot_png }}" alt="Game data over users">
+  <h1 id="The Team" class="p-5 mt-3 text-left">User Dashboard</h1>
+  <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Baner klaret</th>
+                <th>% Gennemført</th>
+                <th>Sidst Aktiv</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in user_stats %}
+                <tr>
+                    <td>{{ user.firstname }} {{ user.lastname }}</td>
+                    <td>{{ user.levels_completed }}</td>
+                    <td>{{ user.percentage }}%</td>
+                    <td>{{ user.activity }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">No users found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+{% endblock %}
